@@ -9,7 +9,7 @@ const privacy_and_policy = () => {
           <div className="mb-20 flex flex-col gap-4 lg:mx-44 md:mx-16 sm:mx-4 space-y-3">
             <h1 className="sm:text-5xl text-4xl font-extrabold">
               Privacy Policy for [Your Website Name]
-            </h1>
+            </h1> 
             <p className="text-xl">
               At [Your Website Name], accessible from [Your Website URL], the
               privacy of our visitors is of utmost importance to us. This

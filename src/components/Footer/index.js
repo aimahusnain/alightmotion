@@ -60,7 +60,7 @@ const Footer = () => {
           <Link className="text-lg underline" href="/terms-&-conditions">
             Terms & Conditions
           </Link>
-          <Link className="text-lg underline" href="/privacy-policy">
+          <Link className="text-lg underline" href="/dmca">
             DMCA
           </Link>
         </div>

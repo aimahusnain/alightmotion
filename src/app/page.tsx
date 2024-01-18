@@ -209,7 +209,7 @@ export default function Home() {
                 <div className="flex gap-5">
                 <Link className="text-lg underline" href="/privacy-policy">Privacy & Policy</Link>
                 <Link className="text-lg underline" href="/terms-&-conditions">Terms & Conditions</Link>
-                <Link className="text-lg underline" href="/privacy-policy">DMCA</Link>
+                <Link className="text-lg underline" href="/dmca">DMCA</Link>
                 </div>
                 
               </div>
