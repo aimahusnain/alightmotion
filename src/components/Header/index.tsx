@@ -30,21 +30,18 @@ export const mymenuitems : MenuItem[] = [
     label: "Contact Us",
     // path: "/category/application",
     // path: "/contact-us",
-    path: "/#",
+    path: "/contact-us",
   },
   {
     id: "blogs",
     label: "Blogs",
     // path: "/blogs",
-    // path: "/categories/all",
-    path: "/#",
-    
+    path: "/categories/all",
   },
   {
     id: "about-us",
     label: "About Us",
-    // path: "/about",
-        path: "/#",
+    path: "/about",
     // path: "/search",
   },
   

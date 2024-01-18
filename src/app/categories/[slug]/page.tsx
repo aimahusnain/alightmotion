@@ -3,7 +3,6 @@ import BlogLayoutThree from "@/src/components/Blog/BlogLayoutThree";
 import Categories from "@/src/components/Blog/Categories";
 import Footer from "@/src/components/Footer";
 import GithubSlugger, { slug } from "github-slugger";
-
 const slugger = new GithubSlugger();
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {

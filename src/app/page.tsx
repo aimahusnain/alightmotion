@@ -16,6 +16,7 @@ import FAQ from "../components/blogs/Faq";
 import OnthisPage from "../components/blogs/OnthisPage";
 import WhyUseit from "../components/blogs/WhyUseit";
 
+
 async function extractAllBlogs() {
   try {
     const res = await fetch(`${process.env.URL}/api/blog-post/get-all-post`, {
@@ -55,7 +56,6 @@ export default function Home() {
       clearInterval(interval);
     };
   }, []);
-
   return (
     // <main className="flex flex-col items-center justify-center">
     //   <HomeCoverSection blogs={allBlogs} />
