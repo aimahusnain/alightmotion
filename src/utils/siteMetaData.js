@@ -1,12 +1,12 @@
 // please update required information
 const siteMetadata = {
-  title: 'Next.js Blog With Tailwind CSS and Contentlayer',
-  author: 'CodeBucks',
-  headerTitle: 'Next.js Blog',
-  description: 'A blog created with Next.js, Tailwind.css and contentlayer.',
+  title: 'Alight Motion MOD APK 2024 with Pro Features, No Watermark, and Ad-Free Experience!',
+  author: 'Muhammad Husnain',
+  headerTitle: 'Alight Motion MOD APK 2024 with Pro Features, No Watermark, and Ad-Free Experience!',
+  description: 'Alight Motion MOD APK 2024 with Pro Features, No Watermark, and Ad-Free Experience!',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'http://localhost:3000', // your website URL
+  siteUrl: 'https://alight-motion.vercel.app/', // your website URL
   siteLogo: '/logo.png',
   socialBanner: '/social-banner.png', // add social banner in the public folder
   email: 'aimahusnain@gmail.com',

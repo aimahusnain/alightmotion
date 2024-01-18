@@ -155,7 +155,7 @@ export default function Home() {
             <div className="flex flex-col text-center pb-12">
               <Conclution />
 
-              <div className="w-full flex justify-between items-center">
+              <div className="w-full flex justify-between sm:flex-row flex-col items-center">
                 <div className="h-7 w-64" />
                 <div className="h-fit flex gap-14 py-8 justify-center">
                   <Tooltip showArrow={true} content="Instagram">
@@ -206,10 +206,10 @@ export default function Home() {
                     </Link>
                   </Tooltip>
                 </div>
-                <div className="flex gap-5">
-                <Link className="text-lg underline" href="/privacy-policy">Privacy & Policy</Link>
-                <Link className="text-lg underline" href="/terms-&-conditions">Terms & Conditions</Link>
-                <Link className="text-lg underline" href="/dmca">DMCA</Link>
+                <div className="flex sm:gap-5 gap-3 my-6">
+                <Link className="sm:text-lg text-sm underline" href="/privacy-policy">Privacy & Policy</Link>
+                <Link className="sm:text-lg text-sm underline" href="/terms-&-conditions">Terms & Conditions</Link>
+                <Link className="sm:text-lg text-sm underline" href="/dmca">DMCA</Link>
                 </div>
                 
               </div>
@@ -232,7 +232,7 @@ export default function Home() {
           alt="sdf"
         />
 
-        <img src="/bg_1.png" className="md:hidden h-full w-full" alt="" />
+        {/* <img src="/bg_1.png" className="md:hidden h-full w-full" alt="" /> */}
 
         <img
           src="/stars.png"
