@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import siteMetadata from "../utils/siteMetaData";
 import { Providers } from "./providers";
 import NextThemeProvider from "@/src/providers/theme-provider";
+import Loading from "../providers/loading";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -54,7 +55,9 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }: {
+export default function RootLayout({
+  children,
+}: {
   children: React.ReactNode;
 }) {
   return (
@@ -63,16 +66,16 @@ export default function RootLayout({ children }: {
         className={cx(
           inter.variable,
           manrope.variable,
-          "font-mr !bg-black text-white"
+          "font-mr !bg-black dark:bg-black text-white"
         )}
       >
         <NextThemeProvider>
-        <Header />
-        <Providers>
-        {children}
-        </Providers>
-        {/* <Footer /> */}
-        </NextThemeProvider>     
+          <Header />
+          <Providers>
+            <Loading>{children}</Loading>
+          </Providers>
+          {/* <Footer /> */}
+        </NextThemeProvider>
       </body>
     </html>
   );
