@@ -18,27 +18,32 @@ export interface MenuItem {
   label: string;
   path: string;
 }
-export const mymenuitems: MenuItem[] = [
+
+export const mymenuitems : MenuItem[] = [
   {
     id: "home",
     label: "Home",
     path: "/",
   },
   {
-    id: "category",
-    label: "Category",
-    path: "/category/application",
+    id: "contact-us",
+    label: "Contact Us",
+    // path: "/category/application",
+    path: "/contact-us",
   },
   {
     id: "blogs",
     label: "Blogs",
+    // path: "/blogs",
     path: "/categories/all",
   },
   {
-    id: "search",
-    label: "Search",
-    path: "/search",
+    id: "about-us",
+    label: "About Us",
+    path: "/about",
+    // path: "/search",
   },
+  
 ];
 
 export default function Header() {
