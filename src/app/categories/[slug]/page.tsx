@@ -1,6 +1,7 @@
 import { allBlogs, Blog } from "@/.contentlayer/generated";
 import BlogLayoutThree from "@/src/components/Blog/BlogLayoutThree";
 import Categories from "@/src/components/Blog/Categories";
+import Footer from "@/src/components/Footer";
 import GithubSlugger, { slug } from "github-slugger";
 
 const slugger = new GithubSlugger();
@@ -62,6 +63,8 @@ const CategoryPage = ({ params }: { params: { slug: string } }) => {
           </article>
         ))}
       </div>
+      <Footer />
+
     </article>
   );
 };

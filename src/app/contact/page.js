@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 import ContactForm from "@/src/components/Contact/ContactForm";
 import siteMetadata from "@/src/utils/siteMetaData";
+import Footer from "@/src/components/Footer";
 
 export const metadata = {
   title: "Contact Me",
@@ -22,6 +23,8 @@ export default function Contact() {
           <h2 className="font-bold capitalize text-2xl xs:text-3xl sm:text-4xl">Let's Connect!</h2>
           <ContactForm />
         </div>
+        <Footer />
+
       </section>
     </>
   );

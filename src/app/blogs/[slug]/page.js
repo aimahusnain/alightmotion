@@ -5,6 +5,7 @@ import siteMetadata from "@/src/utils/siteMetaData";
 import { allBlogs } from "contentlayer/generated";
 import { slug } from "github-slugger";
 import Image from "next/image";
+import Footer from "@/src/components/Footer";
 
 export async function generateStaticParams() {
   return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
@@ -156,6 +157,8 @@ export default function BlogPage({ params }) {
         </div>
         <RenderMdx blog={blog} />
       </div>
+      <Footer />
+
     </article>
     </>
    
