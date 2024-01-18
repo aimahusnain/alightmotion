@@ -66,13 +66,13 @@ export default function RootLayout({ children }: {
           "font-mr !bg-black text-white"
         )}
       >
-        {/* <NextThemeProvider> */}
+        <NextThemeProvider>
         <Header />
         <Providers>
         {children}
         </Providers>
         {/* <Footer /> */}
-        {/* </NextThemeProvider>      */}
+        </NextThemeProvider>     
       </body>
     </html>
   );

@@ -1,7 +1,5 @@
 "use client"
 import { useTheme } from "next-themes";
-import { MdDarkMode } from "react-icons/md";
-import { Sun } from "lucide-react";
 import React from "react";
 import { MoonIcon, SunIcon } from "../Icons";
 

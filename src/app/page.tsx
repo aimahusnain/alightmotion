@@ -85,6 +85,7 @@ export default function Home() {
             <source src="/mobile_landing.mp4" type="video/mp4" />{" "}
           </video>
         </div>
+        
         <div className="w-full md:h-[450px] h-[400px] shadow-xl shadow-[#000]">
           <img
             src="/download.jpg"
@@ -93,7 +94,7 @@ export default function Home() {
           />
         </div>
 
-        <div>
+        <div className="bg-black">
           <div className="absolute z-[10] p-7 pt-20 w-full h-full">
             <div className="justify-center items-center flex flex-col gap-4">
               <div className="justify-center items-center flex flex-col gap-4 lg:mx-44 md:mx-16 sm:mx-4">
