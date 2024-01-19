@@ -8,6 +8,7 @@ import Image from "next/image";
 import Footer from "@/src/components/Footer";
 import BlogReaderImage from "@/src/components/Blog/BlogReader/image";
 import BlogContent from "@/src/components/Blog/BlogReader/BlogContent";
+import ScrollProgressBar from '@/src/components/Blog/BlogReader/ScrollProgressBar'
 
 export async function generateStaticParams() {
   return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
@@ -89,6 +90,7 @@ export default function BlogPage({ params }) {
 
   return (
     <>
+        <ScrollProgressBar />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -6,7 +6,7 @@ import ViewCounter from "./ViewCounter";
 
 const BlogDetails = ({ blog, slug: blogSlug }: {blog: any, slug: any}) => {
   return (
-    <div className="px-2 md:px-10 bg-accent dark:bg-accentDark text-light dark:text-dark py-2 flex items-center justify-around flex-wrap text-lg sm:text-xl font-medium mx-5  md:mx-10 rounded-lg">
+    <div className="shadow-xl shadow-primary/25 px-2 md:px-10 bg-primary relative bottom-16 -mb-7 text-white py-2 flex items-center justify-around flex-wrap text-lg sm:text-xl font-medium mx-5 md:mx-10 rounded-xl">
       <time className="m-3">
         {format(parseISO(blog.publishedAt), "LLLL d, yyyy")}
       </time>
