@@ -36,9 +36,6 @@ const Blog = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
-    jfkFeatured: {
-      type: "boolean",
-    },
     tags: {
       type: "list",
       of: { type: "string" },
