@@ -95,11 +95,13 @@ export default function BlogPage({ params }) {
       />
       <article>
         <BlogReaderImage parmy={params} />
-
+    
         <BlogDetails blog={blog} slug={params.slug} />
 
         <BlogContent parmy={params} />
+        <div className="px-9">
         <Footer />
+        </div>
       </article>
     </>
   );
