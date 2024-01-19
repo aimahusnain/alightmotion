@@ -8,7 +8,7 @@ const mdxComponents = {
     Image
 }
 
-const RenderMdx = ({blog}) => {
+const RenderMdx = ({blog}: {blog: any}) => {
 
     const MDXContent = useMDXComponent(blog.body.code)
 
