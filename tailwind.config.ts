@@ -1,16 +1,15 @@
-const {nextui} = require("@nextui-org/theme");
-import type { Config } from "tailwindcss"
+const { nextui } = require("@nextui-org/theme");
 
 /** @type {import('tailwindcss').Config} */
-const config = {
+module.exports = {
   darkMode: "class",
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -22,7 +21,7 @@ const config = {
     },
     extend: {
       colors: {
-        alightdarkbg: '#1D2238',
+        alightdarkbg: "#1D2238",
         current: "currentColor",
         transparent: "transparent",
         white: "#FFFFFF",
@@ -72,9 +71,9 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        roll:{
-          "0%": {transform: "translateX(100%)"},
-          "100%": {transform: "translateX(-100%)"}
+        roll: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
         },
         "accordion-down": {
           from: { height: "0" },
@@ -92,7 +91,9 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), nextui()],
-} satisfies Config
-
-export default config
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    nextui(),
+  ],
+};
