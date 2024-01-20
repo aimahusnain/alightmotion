@@ -1,14 +1,8 @@
-import BlogDetails from "@/src/components/Blog/BlogDetails";
-import RenderMdx from "@/src/components/Blog/RenderMdx";
-import Tag from "@/src/components/Elements/Tag";
+import BlogReader from "@/src/components/Blog/BlogReader/BlogReading";
+import ScrollProgressBar from '@/src/components/Blog/BlogReader/ScrollProgressBar';
 import siteMetadata from "@/src/utils/siteMetaData";
 import { allBlogs } from "contentlayer/generated";
-import { slug } from "github-slugger";
-import Image from "next/image";
 import Footer from "@/src/components/Footer";
-import BlogReaderImage from "@/src/components/Blog/BlogReader/image";
-import BlogContent from "@/src/components/Blog/BlogReader/BlogContent";
-import ScrollProgressBar from '@/src/components/Blog/BlogReader/ScrollProgressBar'
 
 export async function generateStaticParams() {
   return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
@@ -96,14 +90,17 @@ export default function BlogPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <article>
-        <BlogReaderImage parmy={params} />
+        <BlogReader parmy={params} blogy={blog} />
+        <div className="px-20">
+        <Footer />
+        </div>
     
-        <BlogDetails blog={blog} slug={params.slug} />
+        {/* <BlogDetails blog={blog} slug={params.slug} />
 
         <BlogContent parmy={params} />
         <div className="px-9">
         <Footer />
-        </div>
+        </div> */}
       </article>
     </>
   );

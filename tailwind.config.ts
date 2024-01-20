@@ -65,11 +65,6 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
       keyframes: {
         roll: {
           "0%": { transform: "translateX(100%)" },
