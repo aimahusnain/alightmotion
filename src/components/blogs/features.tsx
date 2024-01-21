@@ -24,6 +24,7 @@ const Features: React.FC<FeaturesProps> = ({
       <Image
         width={80}
         height={50}
+        loading="eager"
         src={`/features/${image}`}
         alt="export"
         className="rounded-full w-20 h-20 object-cover"

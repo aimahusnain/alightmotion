@@ -16,6 +16,7 @@ import FAQ from "../components/blogs/Faq";
 import OnthisPage from "../components/blogs/OnthisPage";
 import WhyUseit from "../components/blogs/WhyUseit";
 import {Spinner} from "@nextui-org/react";
+import { Loader } from "lucide-react";
 
 async function extractAllBlogs() {
   try {
@@ -75,8 +76,8 @@ export default function Home() {
       <div className="absolute -mt-8 !text-white">
       
       {loading && (
-    <Spinner label="Loading..." color="success" className="w-full object-cover z-0" />
-      )}
+        <Spinner label="Loading..." color="success" className="md:h-[450px] h-[400px] w-96 flex items-center justify-center object-cover" />
+        )}
       <video
         className="mix-blend-screen w-full object-cover z-0 hidden md:block glitch"
         autoPlay
