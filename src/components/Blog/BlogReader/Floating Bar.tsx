@@ -14,7 +14,6 @@ import { useEffect, useState } from "react";
 import { RiMenu2Line } from "react-icons/ri";
 import { FaRedditAlien } from "react-icons/fa";
 import { RiTwitterXFill } from "react-icons/ri";
-
 import { FaFacebook } from "react-icons/fa";
 import {
   Dropdown,
@@ -25,13 +24,14 @@ import {
 import React from "react";
 import { LuLink } from "react-icons/lu";
 import siteMetadata from "@/src/utils/siteMetaData";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { FaShareAlt } from "react-icons/fa";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaHackerNews } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa6";
+import { Divider } from "@nextui-org/react";
 
 const Butybar = ({ blogy }: { blogy: any }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -55,13 +55,13 @@ const Butybar = ({ blogy }: { blogy: any }) => {
     try {
       await navigator.clipboard.writeText(url);
       // Use toast.success to display a success message
-      toast.success('URL copied to clipboard!');
+      toast.success("URL copied to clipboard!");
     } catch (err) {
       // Use toast.error to display an error message
-      toast.error('Failed to copy URL to clipboard');
+      toast.error("Failed to copy URL to clipboard");
     }
   };
-  
+
   const handleOpen = (backdrop: any) => {
     setBackdrop(backdrop);
     onOpen();
@@ -87,7 +87,7 @@ const Butybar = ({ blogy }: { blogy: any }) => {
   return (
     <header className="w-full p-4 px-5 sm:px-10 flex items-center justify-between">
       <nav
-        className="border border-white w-max py-3 px-4 sm:px-8 border-solid rounded-full font-medium capitalize items-center flex fixed bottom-6 right-1/2 translate-x-1/2 bg-alightdarkbg z-50 transition-all ease duration-300 gap-2"
+        className="border border-white w-max px-2.5 py-1 border-solid rounded-full font-medium capitalize items-center flex fixed bottom-6 right-1/2 translate-x-1/2 bg-alightdarkbg z-50 transition-all ease duration-300 gap-1.5"
         style={{
           bottom: isVisible ? "1.5rem" : "-5rem",
         }}
@@ -98,7 +98,7 @@ const Butybar = ({ blogy }: { blogy: any }) => {
           onPress={() => handleOpen("tableofcontents")}
           aria-label="Table of Contents"
         >
-<FaBarsStaggered />
+          <FaBarsStaggered />
         </Button>
         <Modal backdrop="blur" isOpen={isOpen} onClose={onClose}>
           <ModalContent>
@@ -152,7 +152,7 @@ const Butybar = ({ blogy }: { blogy: any }) => {
         <Dropdown className="ml-[150px] w-fit">
           <DropdownTrigger>
             <button className="w-10 h-10 p-2 hover:bg-black flex items-center justify-center transition-all duration-150 rounded-full">
-            <FaShareAlt />
+              <FaShareAlt />
             </button>
           </DropdownTrigger>
           <DropdownMenu variant="faded">
@@ -169,31 +169,31 @@ const Butybar = ({ blogy }: { blogy: any }) => {
             </DropdownItem>
             <DropdownItem
               key="twitter"
-              startContent={<RiTwitterXFill  className={iconClasses} />}
+              startContent={<RiTwitterXFill className={iconClasses} />}
             >
               Twitter
             </DropdownItem>
             <DropdownItem
               key="reddit"
-              startContent={<FaRedditAlien  className={iconClasses} />}
+              startContent={<FaRedditAlien className={iconClasses} />}
             >
               Reddit
             </DropdownItem>
             <DropdownItem
               key="linkedin"
-              startContent={<FaLinkedinIn  className={iconClasses} />}
+              startContent={<FaLinkedinIn className={iconClasses} />}
             >
               Linkedin
             </DropdownItem>
             <DropdownItem
               key="Hacker News"
-              startContent={<FaHackerNews  className={iconClasses} />}
+              startContent={<FaHackerNews className={iconClasses} />}
             >
               Hacker News
             </DropdownItem>
             <DropdownItem
               key="facebook"
-              startContent={<FaFacebook  className={iconClasses} />}
+              startContent={<FaFacebook className={iconClasses} />}
             >
               Facebook
             </DropdownItem>

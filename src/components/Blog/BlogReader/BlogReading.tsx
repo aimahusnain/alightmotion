@@ -3,7 +3,7 @@ import BlogDetails from "../BlogDetails";
 import BlogReaderImage from "./image";
 import RenderMdx from "../RenderMdx";
 import Image from "next/image";
-import Butybar from "./Butybar";
+import Butybar from "./Floating Bar";
 import TableofContents from "./TableofContents";
 
 const BlogReading = ({ parmy, blogy }: { parmy: any; blogy: any }) => {
