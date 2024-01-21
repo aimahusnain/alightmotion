@@ -83,11 +83,19 @@ const Butybar = ({ blogy }: { blogy: any }) => {
       });
     }
   };
+  
+  const handleFacebookShare = () => {
+    const currentUrl = window.location.href;
+    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`;
+
+    // Open the Facebook share link in a new window or redirect the current window
+    window.open(facebookShareUrl, '_blank');
+  };
 
   return (
     <header className="w-full p-4 px-5 sm:px-10 flex items-center justify-between">
       <nav
-        className="border border-white w-max px-10 py-0.5 border-solid rounded-full font-medium capitalize items-center flex fixed bottom-6 right-1/2 translate-x-1/2 bg-alightdarkbg z-50 transition-all ease duration-300 gap-4"
+        className="border border-white w-max px-10 py-0.5 border-solid rounded-full font-medium capitalize items-center flex fixed bottom-6 right-1/2 translate-x-1/2 bg-black z-50 transition-all ease duration-300 gap-4"
         style={{
           bottom: isVisible ? "1.5rem" : "-5rem",
         }}
@@ -194,6 +202,7 @@ const Butybar = ({ blogy }: { blogy: any }) => {
             <DropdownItem
               key="facebook"
               startContent={<FaFacebook className={iconClasses} />}
+              onPress={handleFacebookShare}
             >
               Facebook
             </DropdownItem>
