@@ -87,7 +87,7 @@ const Butybar = ({ blogy }: { blogy: any }) => {
   return (
     <header className="w-full p-4 px-5 sm:px-10 flex items-center justify-between">
       <nav
-        className="border border-white w-max px-2.5 py-1 border-solid rounded-full font-medium capitalize items-center flex fixed bottom-6 right-1/2 translate-x-1/2 bg-alightdarkbg z-50 transition-all ease duration-300 gap-1.5"
+        className="border border-white w-max px-10 py-0.5 border-solid rounded-full font-medium capitalize items-center flex fixed bottom-6 right-1/2 translate-x-1/2 bg-alightdarkbg z-50 transition-all ease duration-300 gap-4"
         style={{
           bottom: isVisible ? "1.5rem" : "-5rem",
         }}
