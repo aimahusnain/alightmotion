@@ -20,26 +20,28 @@ const BlogDetails = ({ blog, slug: blogSlug }: { blog: any; slug: any }) => {
     //     #{blog.tags[0]}
     //   </Link>
     // </div>
-    <div className="flex w-full items-center flex-wrap justify-center text-xl gap-5 text-slate-500">
+    <div className="uppercase leading-4 tracking-[2px] font-bold text-slate-400 flex flex-wrap justify-center items-center gap-2">
       <Link
         href={`/categories/${slug(blog.tags[0])}`}
-        className="m-3 hover:text-white"
+        className="mx-3 hover:text-white"
       >
         #{blog.tags[0]}
       </Link>
+      
       <Tooltip
       showArrow
       placement="bottom"
-      content={format(parseISO(blog.publishedAt), "LLL d, yyyy")}
+      content={format(parseISO(blog.publishedAt), "LLLL d, yyyy")}
       >
-      <time className="m-3">
+      <time className="">
         {format(parseISO(blog.publishedAt), "LLL d, yyyy")}
       </time>
       </Tooltip>
-      <div className="m-3 flex items-center justify-center gap-2">
+      
+      <p className="mx-3 flex items-center justify-center gap-2">
         <BookOpen />
         {blog.readingTime.text}
-      </div>
+      </p>
       
       
     </div>

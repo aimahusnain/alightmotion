@@ -50,9 +50,10 @@ const BlogReaderImage: React.FC<BlogReaderImageProps> = ({ parmy }) => {
           placeholder="blur"
           blurDataURL={blog.image.blurhashDataUrl}
           alt={blog.title}
+          draggable={false}
           width={blog.image.width}
           height={blog.image.height}
-          className="w-full h-[430px] object-cover object-center rounded-[40px] shadow-2xl shadow-zinc-800"
+          className="w-full lg:h-[553px] md:h-[396px] sm:h-[207px] h-full object-cover object-center lg:rounded-[40px] md:rounded-[30px] sm:rounded-[20px] rounded-xl myshadow-black"
           priority
           sizes="100vw"
         />

@@ -91,7 +91,7 @@ export default function BlogPage({ params }) {
       />
       <article>
         <BlogReader parmy={params} blogy={blog} />
-        <div className="px-20">
+        <div className="">
         <Footer />
         </div>
     

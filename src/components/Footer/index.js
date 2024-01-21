@@ -9,7 +9,7 @@ import { SlSocialYoutube } from "react-icons/sl";
 const Footer = () => {
 
   return (
-    <div className="flex flex-col text-center pb-12">
+    <div className="flex flex-col text-center pb-12 mx-8">
 
               <div className="w-full flex justify-between sm:flex-row flex-col items-center">
                 <div className="h-7 w-64" />

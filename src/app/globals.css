@@ -6,3 +6,6 @@ body {
     font-family: 'EuclidCircularB', sans-serif;
   }
   
+  .myshadow-black {
+    box-shadow: 0px 20px 70px rgba(255, 255, 255, 0.151);
+}

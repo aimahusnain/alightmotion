@@ -3,7 +3,7 @@
 import { Tooltip } from "@nextui-org/tooltip";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FaInstagram } from "react-icons/fa";
 import { MdOutlineFacebook } from "react-icons/md";
 import { RiTwitterXFill } from "react-icons/ri";
@@ -15,7 +15,7 @@ import Downloadingsteps from "../components/blogs/Downloadingsteps";
 import FAQ from "../components/blogs/Faq";
 import OnthisPage from "../components/blogs/OnthisPage";
 import WhyUseit from "../components/blogs/WhyUseit";
-
+import {Spinner} from "@nextui-org/react";
 
 async function extractAllBlogs() {
   try {
@@ -56,6 +56,14 @@ export default function Home() {
       clearInterval(interval);
     };
   }, []);
+  
+  const [loading, setLoading] = useState(true);
+
+  const handleVideoLoad = () => {
+    setLoading(false);
+  };
+  
+  
   return (
     // <main className="flex flex-col items-center justify-center">
     //   <HomeCoverSection blogs={allBlogs} />
@@ -65,24 +73,31 @@ export default function Home() {
 
     <div className="bg-black">
       <div className="absolute -mt-8 !text-white">
-        <video
-          className="mix-blend-screen w-full object-cover z-0 hidden md:block glitch"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="/desktop_landing.mp4" type="video/mp4" />{" "}
-        </video>
-        <video
-          className="mix-blend-screen w-full object-cover h-full z-0 md:hidden glitch mobile-video"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="/mobile_landing.mp4" type="video/mp4" />{" "}
-        </video>
+      
+      {loading && (
+    <Spinner label="Loading..." color="success" className="w-full object-cover z-0" />
+      )}
+      <video
+        className="mix-blend-screen w-full object-cover z-0 hidden md:block glitch"
+        autoPlay
+        loop
+        muted
+        playsInline
+        onLoadedData={handleVideoLoad}
+      >
+        <source src="/desktop_landing.mp4" type="video/mp4" />
+      </video>
+
+      <video
+        className="mix-blend-screen w-full object-cover h-full z-0 md:hidden glitch mobile-video"
+        autoPlay
+        loop
+        muted
+        playsInline
+        onLoadedData={handleVideoLoad}
+      >
+        <source src="/mobile_landing.mp4" type="video/mp4" />
+      </video>
       </div>
 
       <div className="w-full md:h-[450px] h-[400px] shadow-xl shadow-[#000]">
