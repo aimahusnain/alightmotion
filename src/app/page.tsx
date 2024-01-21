@@ -78,14 +78,17 @@ export default function Home() {
       {loading && (
         <Spinner label="Loading..." color="success" className="md:h-[450px] h-[400px] w-96 flex items-center justify-center object-cover" />
         )}
-      <video
-        className="mix-blend-screen w-full object-cover z-0 hidden md:block glitch"
-        autoPlay
-        loop
-        muted
-        playsInline
-        onLoadedData={handleVideoLoad}
-      >
+        
+        {!loading && (
+          <>
+          <video
+          className="mix-blend-screen w-full object-cover z-0 hidden md:block glitch"
+          autoPlay
+          loop
+          muted
+          playsInline
+          onLoadedData={handleVideoLoad}
+          >
         <source src="/desktop_landing.mp4" type="video/mp4" />
       </video>
 
@@ -96,9 +99,11 @@ export default function Home() {
         muted
         playsInline
         onLoadedData={handleVideoLoad}
-      >
+        >
         <source src="/mobile_landing.mp4" type="video/mp4" />
       </video>
+        </>
+        )}
       </div>
 
       <div className="w-full md:h-[450px] h-[400px] shadow-xl shadow-[#000]">
