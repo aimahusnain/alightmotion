@@ -12,6 +12,7 @@ import {
 } from "@nextui-org/navbar";
 import React from "react";
 import Logo from "./Logo";
+import { Button } from "@nextui-org/button";
 
 export interface MenuItem {
   id: string;
@@ -19,18 +20,11 @@ export interface MenuItem {
   path: string;
 }
 
-export const mymenuitems : MenuItem[] = [
+export const mymenuitems: MenuItem[] = [
   {
     id: "home",
-    label: "Home",
+    label: "Explore",
     path: "/",
-  },
-  {
-    id: "contact-us",
-    label: "Contact Us",
-    // path: "/category/application",
-    // path: "/contact-us",
-    path: "/contact-us",
   },
   {
     id: "articles",
@@ -38,42 +32,9 @@ export const mymenuitems : MenuItem[] = [
     // path: "/blogs",
     path: "/categories/all",
   },
-  {
-    id: "about-us",
-    label: "About Us",
-    path: "/about",
-    // path: "/search",
-  },
-  
 ];
 
 export default function Header() {
-  // const [sticky, setSticky] = useState<boolean>(false);
-  // const [navbarOpen, setNavbarOpen] = useState<boolean>(false);
-  // const { data: session } = useSession();
-  // const { setSearchResults, setSearchQuery } = useContext(GlobalContext);
-  // const router = useRouter();
-  // const pathName = usePathname();
-  // console.log(session, "session");
-
-  // function handleStickyNavbar() {
-  //   if (window.scrollY >= 80) setSticky(true);
-  //   else setSticky(false);
-  // }
-
-  // function handleNavbarToggle() {
-  //   setNavbarOpen(!navbarOpen);
-  // }
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleStickyNavbar);
-  // });
-
-  // useEffect(() => {
-  //   setSearchResults([]);
-  //   setSearchQuery("");
-  // }, [pathName]);
-
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
@@ -110,56 +71,38 @@ export default function Header() {
             </Link>
           </NavbarItem>
         ))}
-
-        {/* <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
-          </Link>
-        </NavbarItem> */}
+        <Link href="/">
+          <Button className="bg-primary hover:bg-primary/90 text-white">
+            Get The App
+          </Button>
+        </Link>
       </NavbarContent>
 
       <NavbarMenu>
-        {/* {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              className="w-full"
-              color={
-                index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
-              href="#"
-              size="lg"
-              
-            >
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))} */}
-
+      <div
+          className="flex !items-center text-left justify-center gap-10 h-fit text-3xl flex-col"
+      
+      >
         {mymenuitems.map((item: MenuItem, index: number) => (
           <NavbarMenuItem
-            key={index}
-            className="flex !items-start justify-center gap-10 h-fit text-3xl"
+          key={index}
           >
             <Link
               href={item.path}
               color="foreground"
               size="lg"
               className="font-semibold"
-            >
+              >
               {item.label}
             </Link>
           </NavbarMenuItem>
         ))}
+        <Link href="/">
+          <Button className="bg-primary hover:bg-primary/90 text-white">
+            Get The App
+          </Button>
+        </Link>
+        </div>
       </NavbarMenu>
     </Navbar>
   );

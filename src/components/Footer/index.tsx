@@ -70,7 +70,7 @@ const Footer = () => {
               </div>
 
               <p className="text-white/40 text-xs">
-              Copyright © 2014-2024 Alight Motion All rights reserved. | <Link href='/privacy-policy' className="hover:text-primary">Privacy Policy</Link> | <Link href='/dmca' className="hover:text-primary">DMCA Disclaimer</Link> | <Link href="/terms-&-conditions" className="hover:text-primary">Terms & Conditons</Link>
+              Copyright © 2014-2024 Alight Motion All rights reserved. | <Link href='/privacy-policy' className="hover:underline">Privacy Policy</Link> | <Link href='/dmca' className="hover:underline">DMCA Disclaimer</Link> | <Link href="/terms-&-conditions" className="hover:underline">Terms & Conditons</Link>
               </p>
             </div>
   );
