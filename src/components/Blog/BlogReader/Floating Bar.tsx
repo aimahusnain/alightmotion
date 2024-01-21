@@ -92,6 +92,16 @@ const Butybar = ({ blogy }: { blogy: any }) => {
     window.open(facebookShareUrl, '_blank');
   };
 
+  const handleWhatsappShare = () => {
+    const currentUrl = window.location.href;
+    const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(`Check out this article: ${currentUrl}`)}`;
+
+    // Open the WhatsApp share link in a new window or redirect the current window
+    window.open(whatsappShareUrl, '_blank');
+  };
+  
+  
+
   return (
     <header className="w-full p-4 px-5 sm:px-10 flex items-center justify-between">
       <nav
@@ -208,6 +218,7 @@ const Butybar = ({ blogy }: { blogy: any }) => {
             </DropdownItem>
             <DropdownItem
               key="whatsup"
+              onPress={handleWhatsappShare}
               startContent={<FaWhatsapp className={iconClasses} />}
             >
               Whats Up
