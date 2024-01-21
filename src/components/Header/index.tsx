@@ -33,8 +33,8 @@ export const mymenuitems : MenuItem[] = [
     path: "/contact-us",
   },
   {
-    id: "blogs",
-    label: "Blogs",
+    id: "articles",
+    label: "Articles",
     // path: "/blogs",
     path: "/categories/all",
   },

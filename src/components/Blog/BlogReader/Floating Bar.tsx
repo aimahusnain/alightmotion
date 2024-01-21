@@ -211,6 +211,7 @@ const Butybar = ({ blogy }: { blogy: any }) => {
             >
               Permalink
             </DropdownItem>
+            
             <DropdownItem
               key="twitter"
               startContent={<RiTwitterXFill className={iconClasses} />}
@@ -218,6 +219,7 @@ const Butybar = ({ blogy }: { blogy: any }) => {
             >
               Twitter
             </DropdownItem>
+            
             <DropdownItem
               key="reddit"
               onPress={handleRedditShare}
@@ -225,6 +227,7 @@ const Butybar = ({ blogy }: { blogy: any }) => {
             >
               Reddit
             </DropdownItem>
+            
             <DropdownItem
               key="linkedin"
               onPress={handleLinkedInShare}
@@ -232,6 +235,7 @@ const Butybar = ({ blogy }: { blogy: any }) => {
             >
               Linkedin
             </DropdownItem>
+            
             <DropdownItem
               key="Hacker News"
               onPress={handleHackerNewsShare}
@@ -239,6 +243,7 @@ const Butybar = ({ blogy }: { blogy: any }) => {
             >
               Hacker News
             </DropdownItem>
+            
             <DropdownItem
               key="facebook"
               startContent={<FaFacebook className={iconClasses} />}
@@ -246,6 +251,7 @@ const Butybar = ({ blogy }: { blogy: any }) => {
             >
               Facebook
             </DropdownItem>
+            
             <DropdownItem
               key="whatsup"
               onPress={handleWhatsappShare}
@@ -253,6 +259,7 @@ const Butybar = ({ blogy }: { blogy: any }) => {
             >
               Whats Up
             </DropdownItem>
+            
           </DropdownMenu>
         </Dropdown>
       </nav>
