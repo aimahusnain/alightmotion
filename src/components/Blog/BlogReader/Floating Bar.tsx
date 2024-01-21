@@ -84,23 +84,51 @@ const Butybar = ({ blogy }: { blogy: any }) => {
     }
   };
   
+  const currentUrl = window.location.href;
+  
   const handleFacebookShare = () => {
-    const currentUrl = window.location.href;
-    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`;
-
+    const encodedUrl = encodeURIComponent(currentUrl);
+    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=Check out this article`;
+  
     // Open the Facebook share link in a new window or redirect the current window
     window.open(facebookShareUrl, '_blank');
   };
+  
 
   const handleWhatsappShare = () => {
-    const currentUrl = window.location.href;
     const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(`Check out this article: ${currentUrl}`)}`;
 
     // Open the WhatsApp share link in a new window or redirect the current window
     window.open(whatsappShareUrl, '_blank');
   };
   
+  const handleTwitterShare = () => {
+    const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent('Check out this article')}`;
+
+    // Open the Twitter share link in a new window or redirect the current window
+    window.open(twitterShareUrl, '_blank');
+  };
   
+  const handleRedditShare = () => {
+    const redditShareUrl = `https://www.reddit.com/submit?url=${encodeURIComponent(currentUrl)}&title=${encodeURIComponent('Check out this article')}`;
+
+    // Open the Reddit share link in a new window or redirect the current window
+    window.open(redditShareUrl, '_blank');
+  };
+  
+  const handleLinkedInShare = () => {
+    const linkedInShareUrl = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(currentUrl)}&title=${encodeURIComponent('Check out this article')}`;
+
+    // Open the LinkedIn share link in a new window or redirect the current window
+    window.open(linkedInShareUrl, '_blank');
+  };
+  
+  const handleHackerNewsShare = () => {
+    const hackerNewsShareUrl = `https://news.ycombinator.com/submitlink?u=${encodeURIComponent(currentUrl)}&t=${encodeURIComponent('Check out this article')}`;
+
+    // Open the Hacker News share link in a new window or redirect the current window
+    window.open(hackerNewsShareUrl, '_blank');
+  };
 
   return (
     <header className="w-full p-4 px-5 sm:px-10 flex items-center justify-between">
@@ -175,8 +203,6 @@ const Butybar = ({ blogy }: { blogy: any }) => {
           </DropdownTrigger>
           <DropdownMenu variant="faded">
             <DropdownItem
-              className="text-primary"
-              color="primary"
               key="permalink"
               onPress={() =>
                 copyToClipboard(`${siteMetadata.siteUrl}${blogy.url}`)
@@ -188,23 +214,27 @@ const Butybar = ({ blogy }: { blogy: any }) => {
             <DropdownItem
               key="twitter"
               startContent={<RiTwitterXFill className={iconClasses} />}
+              onPress={handleTwitterShare}
             >
               Twitter
             </DropdownItem>
             <DropdownItem
               key="reddit"
+              onPress={handleRedditShare}
               startContent={<FaRedditAlien className={iconClasses} />}
             >
               Reddit
             </DropdownItem>
             <DropdownItem
               key="linkedin"
+              onPress={handleLinkedInShare}
               startContent={<FaLinkedinIn className={iconClasses} />}
             >
               Linkedin
             </DropdownItem>
             <DropdownItem
               key="Hacker News"
+              onPress={handleHackerNewsShare}
               startContent={<FaHackerNews className={iconClasses} />}
             >
               Hacker News
