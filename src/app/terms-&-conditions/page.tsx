@@ -10,13 +10,13 @@ const privacy_and_policy = () => {
             <h1 className="sm:text-5xl text-4xl font-extrabold">
               Terms and Conditions
             </h1>
-            <p className="text-xl">Welcome to [Your Company Name]&apos;s Website!</p>
-            <p className="text-xl">
+            <p className="text-xl text-white/60">Welcome to [Your Company Name]&apos;s Website!</p>
+            <p className="text-xl text-white/60">
               These terms and conditions outline the rules and regulations for
               the use of [Your Company Name]&apos;s Website, located at [Your Website
               URL].
             </p>
-            <p className="text-xl">
+            <p className="text-xl text-white/60">
               By accessing this website, we assume you accept these terms and
               conditions. Do not continue to use the website if you do not agree
               to take all of the terms and conditions stated on this page.
