@@ -1,15 +1,15 @@
+import type { Config } from "tailwindcss"
 const { nextui } = require("@nextui-org/theme");
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
   darkMode: "class",
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
-  ],
+	],
   prefix: "",
   theme: {
     container: {
@@ -29,6 +29,7 @@ module.exports = {
         primary: "#04FDA8",
         light: "#fff",
         gray: "#747474",
+      
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -63,6 +64,11 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
       keyframes: {
         roll: {
           "0%": { transform: "translateX(100%)" },
@@ -89,4 +95,6 @@ module.exports = {
     require('@tailwindcss/typography'),
     nextui(),
   ],
-};
+} satisfies Config
+
+export default config

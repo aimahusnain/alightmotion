@@ -8,6 +8,7 @@ import siteMetadata from "../utils/siteMetaData";
 import { Providers } from "./providers";
 import NextThemeProvider from "@/src/providers/theme-provider";
 import Loading from "../providers/loading";
+import { ToastContainer } from 'react-toastify';
 
 // const inter = Inter({
 //   subsets: ["latin"],
@@ -72,7 +73,10 @@ export default function RootLayout({
         <NextThemeProvider>
           <Header />
           <Providers>
-            <Loading>{children}</Loading>
+            <Loading>
+            {children}
+            <ToastContainer />
+            </Loading>
           </Providers>
           {/* <Footer /> */}
         </NextThemeProvider>

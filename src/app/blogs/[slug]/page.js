@@ -3,6 +3,7 @@ import ScrollProgressBar from '@/src/components/Blog/BlogReader/ScrollProgressBa
 import siteMetadata from "@/src/utils/siteMetaData";
 import { allBlogs } from "contentlayer/generated";
 import Footer from "@/src/components/Footer";
+import ToastProvider from 'react-hot-toast';
 
 export async function generateStaticParams() {
   return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
