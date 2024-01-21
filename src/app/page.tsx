@@ -15,7 +15,7 @@ import Downloadingsteps from "../components/blogs/Downloadingsteps";
 import FAQ from "../components/blogs/Faq";
 import OnthisPage from "../components/blogs/OnthisPage";
 import WhyUseit from "../components/blogs/WhyUseit";
-import {Spinner} from "@nextui-org/react";
+import { Spinner } from "@nextui-org/react";
 import { Loader } from "lucide-react";
 
 async function extractAllBlogs() {
@@ -57,7 +57,7 @@ export default function Home() {
       clearInterval(interval);
     };
   }, []);
-  
+
   const [loading, setLoading] = useState(true);
 
   const handleVideoLoadStart = () => {
@@ -66,7 +66,7 @@ export default function Home() {
   const handleVideoLoad = () => {
     setLoading(false);
   };
-  
+
   return (
     // <main className="flex flex-col items-center justify-center">
     //   <HomeCoverSection blogs={allBlogs} />
@@ -83,7 +83,7 @@ export default function Home() {
         />
       )}
 
-      <div className={`absolute -mt-8 !text-white ${loading ? 'hidden' : ''}`}>
+      <div className={`absolute -mt-8 !text-white ${loading ? "hidden" : ""}`}>
         <video
           className="mix-blend-screen w-full object-cover z-0 hidden md:block glitch"
           autoPlay
@@ -176,9 +176,8 @@ export default function Home() {
 
             <Downloadingsteps />
 
-              <Conclution />
-            <div className="flex flex-col text-center pb-12">
-
+            <Conclution />
+            <div className="flex flex-col w-full text-center pb-12">
               <div className="w-full flex justify-between sm:flex-row flex-col items-center">
                 <div className="h-7 w-64" />
                 <div className="h-fit flex gap-14 py-8 justify-center">
@@ -231,20 +230,31 @@ export default function Home() {
                   </Tooltip>
                 </div>
                 <div className="flex sm:gap-5 gap-3 my-6">
-                <Link className="sm:text-lg text-sm underline" href="/privacy-policy">Privacy & Policy</Link>
-                <Link className="sm:text-lg text-sm underline" href="/terms-&-conditions">Terms & Conditions</Link>
-                <Link className="sm:text-lg text-sm underline" href="/dmca">DMCA</Link>
+                  <Link className="sm:text-lg text-sm underline" href="/about">
+                    About Us
+                  </Link>
+                  <Link
+                    className="sm:text-lg text-sm underline"
+                    href="/contact"
+                  >
+                    Contact Us
+                  </Link>
                 </div>
-                
               </div>
 
               <p className="text-white/40 text-xs">
-                Copyright © Splice Video Editor S.r.l. | Corso Como 15, 20154
-                Milan, Italy | VAT, tax code, and number of registration with
-                the Milan Monza Brianza Lodi Company Register 11505810967 | REA
-                number MI 2608304 | Contributed capital €10.000,00 | Sole
-                shareholder company subject to the management and coordination
-                of Bending Spoons S.p.A.{" "}
+                Copyright © 2014-2024 Alight Motion All rights reserved. |{" "}
+                <Link href="/privacy-policy" className="hover:text-primary">
+                  Privacy Policy
+                </Link>{" "}
+                |{" "}
+                <Link href="/dmca" className="hover:text-primary">
+                  DMCA Disclaimer
+                </Link>{" "}
+                |{" "}
+                <Link href="/terms-&-conditions" className="hover:text-primary">
+                  Terms & Conditons
+                </Link>
               </p>
             </div>
           </div>

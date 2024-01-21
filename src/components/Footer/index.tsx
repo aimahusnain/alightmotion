@@ -9,7 +9,7 @@ import { SlSocialYoutube } from "react-icons/sl";
 const Footer = () => {
 
   return (
-    <div className="flex flex-col text-center pb-12 mx-8">
+    <div className="flex flex-col w-full text-center pb-12 mx-8">
 
               <div className="w-full flex justify-between sm:flex-row flex-col items-center">
                 <div className="h-7 w-64" />
@@ -63,20 +63,14 @@ const Footer = () => {
                   </Tooltip>
                 </div>
                 <div className="flex sm:gap-5 gap-3 my-6">
-                <Link className="sm:text-lg text-sm underline" href="/privacy-policy">Privacy & Policy</Link>
-                <Link className="sm:text-lg text-sm underline" href="/terms-&-conditions">Terms & Conditions</Link>
-                <Link className="sm:text-lg text-sm underline" href="/dmca">DMCA</Link>
+                <Link className="sm:text-lg text-sm underline" href="/about">About Us</Link>
+                <Link className="sm:text-lg text-sm underline" href="/contact">Contact Us</Link>
                 </div>
                 
               </div>
 
               <p className="text-white/40 text-xs">
-                Copyright © Splice Video Editor S.r.l. | Corso Como 15, 20154
-                Milan, Italy | VAT, tax code, and number of registration with
-                the Milan Monza Brianza Lodi Company Register 11505810967 | REA
-                number MI 2608304 | Contributed capital €10.000,00 | Sole
-                shareholder company subject to the management and coordination
-                of Bending Spoons S.p.A.{" "}
+              Copyright © 2014-2024 Alight Motion All rights reserved. | <Link href='/privacy-policy' className="hover:text-primary">Privacy Policy</Link> | <Link href='/dmca' className="hover:text-primary">DMCA Disclaimer</Link> | <Link href="/terms-&-conditions" className="hover:text-primary">Terms & Conditons</Link>
               </p>
             </div>
   );

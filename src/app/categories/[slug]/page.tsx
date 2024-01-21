@@ -26,7 +26,7 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<{ title: string; description: string }> {
   return {
-    title: `${params.slug.replaceAll("-", " ")} Blogs`,
+    title: `${params.slug.replaceAll("-", " ")} Articles`,
     description: `Learn more about ${params.slug === "all" ? "web development" : params.slug} through our collection of expert blogs and tutorials`,
   };
 }
