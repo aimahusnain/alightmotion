@@ -64,6 +64,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+    <head>
+      
+    </head>
       <body
         className={cx(
           "font-EuclidCircularB",  // Use the declared font-family
