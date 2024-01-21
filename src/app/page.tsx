@@ -60,10 +60,12 @@ export default function Home() {
   
   const [loading, setLoading] = useState(true);
 
+  const handleVideoLoadStart = () => {
+    setLoading(true);
+  };
   const handleVideoLoad = () => {
     setLoading(false);
   };
-  
   
   return (
     // <main className="flex flex-col items-center justify-center">
@@ -73,37 +75,38 @@ export default function Home() {
     // </main>
 
     <div className="bg-black">
-      <div className="absolute -mt-8 !text-white">
-      
       {loading && (
-        <Spinner label="Loading..." color="success" className="md:h-[450px] h-[400px] w-96 flex items-center justify-center object-cover" />
-        )}
-        
-        {!loading && (
-          <>
-          <video
+        <Spinner
+          label="Loading..."
+          color="success"
+          className="h-full w-96 flex items-center justify-center object-cover absolute top-0 left-0 right-0 bottom-1/2 m-auto"
+        />
+      )}
+
+      <div className={`absolute -mt-8 !text-white ${loading ? 'hidden' : ''}`}>
+        <video
           className="mix-blend-screen w-full object-cover z-0 hidden md:block glitch"
           autoPlay
           loop
           muted
           playsInline
+          onLoadStart={handleVideoLoadStart}
           onLoadedData={handleVideoLoad}
-          >
-        <source src="/desktop_landing.mp4" type="video/mp4" />
-      </video>
-
-      <video
-        className="mix-blend-screen w-full object-cover h-full z-0 md:hidden glitch mobile-video"
-        autoPlay
-        loop
-        muted
-        playsInline
-        onLoadedData={handleVideoLoad}
         >
-        <source src="/mobile_landing.mp4" type="video/mp4" />
-      </video>
-        </>
-        )}
+          <source src="/desktop_landing.mp4" type="video/mp4" />
+        </video>
+
+        <video
+          className="mix-blend-screen w-full object-cover h-full z-0 md:hidden glitch mobile-video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          onLoadStart={handleVideoLoadStart}
+          onLoadedData={handleVideoLoad}
+        >
+          <source src="/mobile_landing.mp4" type="video/mp4" />
+        </video>
       </div>
 
       <div className="w-full md:h-[450px] h-[400px] shadow-xl shadow-[#000]">
