@@ -186,7 +186,7 @@ const Create: NextPage = () => {
                 <div className="text-center">
                   <button
                     type="submit"
-                    className={`mt-1 p-3 w-full border rounded-md focus:outline-none focus:ring focus:border-primary ${formValid ? "bg-primary text-black" : "cursor-not-allowed bg-transparent border-white text-white"}`}
+                    className={`mt-1 p-3 w-full border rounded-md focus:outline-none focus:ring focus:border-primary font-bold ${formValid ? "bg-primary text-black" : "cursor-not-allowed bg-transparent border-white text-white"}`}
                     disabled={!formValid || isLoading}
                   >
                     {isLoading ? 'Submitting...' : 'Submit Contact Form'}
