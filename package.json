@@ -8,7 +8,7 @@
     "postbuild": "next-sitemap --next-sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate" 
   },
   "dependencies": {
     "@dotlottie/react-player": "^1.2.1",
