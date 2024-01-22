@@ -72,7 +72,7 @@ export default function Header() {
           </NavbarItem>
         ))}
         <Link href="/">
-          <Button className="bg-primary hover:bg-primary/90 text-white">
+          <Button className="bg-primary hover:bg-primary/90 text-black">
             Get The App
           </Button>
         </Link>
@@ -98,7 +98,7 @@ export default function Header() {
           </NavbarMenuItem>
         ))}
         <Link href="/">
-          <Button className="bg-primary hover:bg-primary/90 text-white">
+          <Button className="bg-primary hover:bg-primary/90 text-black">
             Get The App
           </Button>
         </Link>
