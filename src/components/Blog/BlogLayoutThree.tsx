@@ -6,7 +6,7 @@ import React from "react";
 const BlogLayoutThree = ({ blog }: {blog: any}) => {
   return (
     <div className="group flex flex-col items-center text-light">
-      <Link href={blog.url} className="h-full rounded-xl overflow-hidden">
+      <Link href={blog.url} className="h-full rounded-3xl overflow-hidden">
         <Image
           src={blog.image.filePath.replace("../public", "")}
           placeholder="blur"
@@ -24,7 +24,7 @@ const BlogLayoutThree = ({ blog }: {blog: any}) => {
           {blog.tags[0]}
         </span>
         <Link href={blog.url} className="inline-block my-1">
-          <h2 className="font-semibold capitalize text-base sm:text-lg">
+          <h2 className="capitalize text-[24px] font-bold leading-relaxed mb-[0.5rem]">
             <span
               className="bg-gradient-to-r from-primary to-transparent bg-[length:0px_6px] group-hover:bg-[length:100%_6px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500"
             >
@@ -33,8 +33,8 @@ const BlogLayoutThree = ({ blog }: {blog: any}) => {
           </h2>
         </Link>
 
-        <span className="capitalize text-gray dark:text-light/50 font-semibold text-sm  sm:text-base">
-          {format(new Date(blog.publishedAt), "MMMM dd, yyyy")}
+        <span className="capitalize text-gray dark:text-light/50 font-semibold text-[18px]">
+          {blog.description}
         </span>
       </div>
     </div>
