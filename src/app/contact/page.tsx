@@ -27,11 +27,14 @@ const Create: NextPage = () => {
   const [formData, setFormData] = useState(initialContactFormData);
   const [formValid, setFormValid] = useState(false);
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+
     try {
+      setIsLoading(true); // Set loading state to true
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -39,27 +42,24 @@ const Create: NextPage = () => {
         },
         body: JSON.stringify(formData),
       });
-  
+
       if (response.ok) {
         console.log("Form data sent successfully");
         setSubmissionSuccess(true);
         setFormData(initialContactFormData);
         validateForm();
-  
-        // Show success toast
         toast.success('Form submitted successfully!');
       } else {
         console.error("Error sending form data");
-        // Show error toast
         toast.error('Error submitting form data. Please try again.');
       }
     } catch (error) {
       console.error(error);
-      // Show error toast
       toast.error('An unexpected error occurred. Please try again later.');
+    } finally {
+      setIsLoading(false); // Reset loading state
     }
   };
-  
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -69,7 +69,7 @@ const Create: NextPage = () => {
       ...prevData,
       [name]: value,
     }));
-    validateForm(); // Validate the form on each input change
+    validateForm();
   };
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -78,11 +78,10 @@ const Create: NextPage = () => {
       ...prevData,
       [name]: value,
     }));
-    validateForm(); // Validate the form on each select change
+    validateForm();
   };
 
   const validateForm = () => {
-    // Check if all fields are filled
     const isFormValid = Object.values(formData).every((value) => value.trim() !== "");
     setFormValid(isFormValid);
   };
@@ -188,9 +187,9 @@ const Create: NextPage = () => {
                   <button
                     type="submit"
                     className={`mt-1 p-3 w-full border rounded-md focus:outline-none focus:ring focus:border-primary ${formValid ? "bg-primary text-black" : "cursor-not-allowed bg-transparent border-white text-white"}`}
-                    disabled={!formValid}
+                    disabled={!formValid || isLoading}
                   >
-                    Submit Contact Form
+                    {isLoading ? 'Submitting...' : 'Submit Contact Form'}
                   </button>
                 </div>
               </form>
