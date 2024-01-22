@@ -1,5 +1,4 @@
-import Footer from "@/src/components/Footer";
-import Link from "next/link";
+import Bgcolors from "@/src/components/mylayouts/bgcolors";
 
 export const metadata = {
   title: "About Me",
@@ -8,9 +7,7 @@ export const metadata = {
 
 export default function About() {
   return (
-    <div>
-      <div className="absolute z-[10] p-7 pt-20 w-full h-full">
-        <div className="justify-center items-center flex flex-col gap-4">
+        <Bgcolors>
           <div className="mb-20 flex flex-col gap-4 lg:mx-44 md:mx-16 sm:mx-4 space-y-3">
             <h1 className="sm:text-6xl text-4xl font-black">About Us</h1>
             <h2 className="text-4xl font-bold">
@@ -99,22 +96,6 @@ export default function About() {
               your website and its goals.
             </p>
           </div>
-          <Footer />
-        </div>
-      </div>
-
-      <img src="/bg.png" className="hidden md:block h-full w-full" alt="sdf" />
-
-      <img
-        src="/stars.png"
-        alt=""
-        className="hidden sm:block h-full w-full absolute top-[600px]"
-      />
-      <img
-        src="/vertical_stars.png"
-        alt=""
-        className="sm:hidden h-full w-full absolute top-[500px]"
-      />
-    </div>
+      </Bgcolors>
   );
 }

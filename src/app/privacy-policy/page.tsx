@@ -1,11 +1,10 @@
 import Footer from "@/src/components/Footer";
 import React from "react";
+import Bgcolors from "@/src/components/mylayouts/bgcolors";
 
 const privacy_and_policy = () => {
   return (
-    <div>
-      <div className="absolute z-[10] p-7 pt-20 w-full h-full">
-        <div className="justify-center items-center flex flex-col gap-4">
+        <Bgcolors>
           <div className="mb-20 flex flex-col gap-4 lg:mx-44 md:mx-16 sm:mx-4 space-y-3">
             <h1 className="sm:text-5xl text-4xl font-extrabold">
               Privacy Policy for [Your Website Name]
@@ -132,23 +131,7 @@ const privacy_and_policy = () => {
               please contact us.
             </p>{" "}
           </div>
-          <Footer />
-        </div>
-      </div>
-
-      <img src="/bg.png" className="hidden md:block h-full w-full" alt="sdf" />
-
-      <img
-        src="/stars.png"
-        alt=""
-        className="hidden sm:block h-full w-full absolute top-[600px]"
-      />
-      <img
-        src="/vertical_stars.png"
-        alt=""
-        className="sm:hidden h-full w-full absolute top-[500px]"
-      />
-    </div>
+      </Bgcolors>
   );
 };
 
