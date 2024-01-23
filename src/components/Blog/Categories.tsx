@@ -1,9 +1,3 @@
-import { slug } from "github-slugger";
-import React from "react";
-import AwesomeSlider from "react-awesome-slider";
-import "react-awesome-slider/dist/styles.css";
-import Category from "./Category";
-import { Card, CardContent } from "@/src/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -11,6 +5,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/src/components/ui/carousel";
+import { slug } from "github-slugger";
+import React from "react";
+import "react-awesome-slider/dist/styles.css";
+import Category from "./Category";
 
 interface CategoriesProps {
   categories: any;
