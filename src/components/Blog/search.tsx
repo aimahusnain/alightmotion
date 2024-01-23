@@ -37,13 +37,14 @@ const SearchPage = ({ parmy }: { parmy: any }) => {
       <div>
         <div className="grid grid-cols-1 items-center gap-5 pt-5 text-sm md:grid-cols-2">
           <div className="relative col-span-1">
-            <input
-              type="text"
-              placeholder="Search articles…"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-base focus:bg-transparent dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-50 dark:placeholder:text-neutral-400 dark:hover:bg-neutral-950"
-            />
+          <input
+  type="text"
+  placeholder="Search articles…"
+  value={searchTerm}
+  onChange={(e) => setSearchTerm(e.target.value)}
+  className="w-full rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-base outline-none focus:ring focus:!border-primary focus:!outline-none focus:border-2 focus:border-solid focus:bg-transparent dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-50 transition-all dark:placeholder:text-neutral-400 dark:hover:bg-neutral-950"
+/>
+
           </div>
           <div className="col-span-1 flex flex-row flex-wrap gap-1 text-slate-600 dark:text-neutral-300 md:flex-nowrap justify-end">
           <SocialMediaIcons />
