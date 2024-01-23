@@ -9,7 +9,7 @@ const Footer = () => {
 
               <div className="w-full flex justify-between sm:flex-row flex-col items-center">
                 <div className="h-7 w-64" />
-                <SocialMediaIcons />
+                <SocialMediaIcons gap='gap-14' />
                 <div className="flex sm:gap-5 gap-3 my-6">
                 <Link className="sm:text-lg text-sm underline" href="/about">About Us</Link>
                 <Link className="sm:text-lg text-sm underline" href="/contact">Contact Us</Link>

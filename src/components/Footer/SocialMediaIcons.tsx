@@ -6,9 +6,11 @@ import { RiTwitterXFill } from "react-icons/ri";
 import { SlSocialYoutube } from "react-icons/sl";
 
 
-const SocialMediaIcons = () => {
+const SocialMediaIcons = ({
+    gap
+}: {gap: string}) => {
   return (
-    <div className="h-fit flex gap-14 py-8 justify-center">
+    <div className={`h-fit flex ${gap} py-8 justify-center`}>
                   <Tooltip showArrow={true} content="Instagram">
                     <Link
                       target="_blank"
