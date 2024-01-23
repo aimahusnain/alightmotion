@@ -25,11 +25,7 @@ const BlogLayoutThree = ({ blog }: {blog: any}) => {
         </span>
         <Link href={blog.url} className="inline-block my-1">
           <h2 className="capitalize text-[24px] font-bold leading-relaxed mb-[0.5rem]">
-            <span
-              className="bg-gradient-to-r from-primary to-transparent bg-[length:0px_6px] group-hover:bg-[length:100%_6px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500"
-            >
               {blog.title}
-            </span>
           </h2>
         </Link>
 

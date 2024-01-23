@@ -1,5 +1,5 @@
 import React from "react";
-import {Accordion, AccordionItem} from "@nextui-org/accordion";
+import {Accordion, AccordionItem} from "@nextui-org/react";
 
 const OnthisPage = () => {
   function handleSmoothScroll(e: any, element: string) {

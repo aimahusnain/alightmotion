@@ -3,7 +3,10 @@ import BlogLayoutThree from "@/src/components/Blog/BlogLayoutThree";
 import Categories from "@/src/components/Blog/Categories";
 import Footer from "@/src/components/Footer";
 import GithubSlugger, { slug } from "github-slugger";
+import HomeCoverSection from "@/src/components/Home/HomeCoverSection";
+import Search from '@/src/components/Blog/search'
 const slugger = new GithubSlugger();
+
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const categories: string[] = [];
@@ -32,6 +35,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 const CategoryPage = ({ params }: { params: { slug: string } }) => {
+  const maxFeaturedBlogs = 4;
+  const featuredBlogs = allBlogs.filter((blog) => blog.jfkFeatured === true).slice(0, maxFeaturedBlogs);
+  
   const allCategories: string[] = ["all"];
   const blogs = allBlogs.filter((blog: Blog) => {
     return blog.tags && blog.tags.some((tag: string) => {  // Add a check for the existence of blog.tags
@@ -53,15 +59,11 @@ const CategoryPage = ({ params }: { params: { slug: string } }) => {
         <span className="mt-2 inline-block">Discover more categories and expand your knowledge!</span>
       </div>
       
-      <Categories categories={allCategories} currentSlug={params.slug} />
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-16 mt-5 sm:mt-10 md:mt-24 sxl:mt-32">
-        {blogs.map((blog: Blog, index: number) => (
-          <article key={index} className="col-span-1 row-span-1 relative">
-            <BlogLayoutThree blog={blog} />
-          </article>
-        ))}
-      </div>
+      {/* <HomeCoverSection blogs={allBlogs} featuredBlogs={featuredBlogs} /> */}
+      
+      <Search parmy={params} />
+      
+      {/* <Categories categories={allCategories} currentSlug={params.slug} /> */}
       <Footer />
 
     </article>

@@ -1,13 +1,12 @@
 // please update required information
 const siteMetadata = {
   title: 'Alight Motion MOD APK 2024 with Pro Features, No Watermark, and Ad-Free Experience!',
-  author: 'Muhammad Husnain',
-  headerTitle: 'Alight Motion MOD APK 2024 with Pro Features, No Watermark, and Ad-Free Experience!',
+  author: 'Alight Creative',
   description: 'Alight Motion MOD APK 2024 with Pro Features, No Watermark, and Ad-Free Experience!',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://alight-motion.vercel.app/', // your website URL
-  siteLogo: '/logo.png',
+  siteLogo: '/alightmotionlogo.webp',
   socialBanner: '/social-banner.png', // add social banner in the public folder
   email: 'aimahusnain@gmail.com',
   github: 'https://github.com/aimahusnain',
