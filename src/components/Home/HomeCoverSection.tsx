@@ -7,7 +7,7 @@ import React from "react";
 import Tag from "../Elements/Tag";
 import { slug } from "github-slugger";
 
-const HomeCoverSection = ({ blogs, featuredBlogs }) => {
+const HomeCoverSection = ({ blogs, featuredBlogs }: {blogs: any, featuredBlogs: any}) => {
   const sortedBlogs = sortBlogs(blogs);
 
   // Use the featuredBlogs prop to display the featured blogs
@@ -20,7 +20,7 @@ const HomeCoverSection = ({ blogs, featuredBlogs }) => {
 
   return (
     <div className="w-full inline-block">
-        {blogsToDisplay.map((blogToDisplay, index) => (
+        {blogsToDisplay.map(({blogToDisplay, index}: {blogToDisplay: any, index: any}) => (
           <article
             key={index}
             className="flex flex-col items-start justify-end mx-5 sm:mx-10 relative h-[60vh] sm:h-[85vh]"
