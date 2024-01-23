@@ -7,24 +7,27 @@ interface CategoryProps {
   name: string;
   active?: boolean;
   className?: string;
+  extraClassName?: string;
 }
 
 const Category: React.FC<CategoryProps> = ({
   link = "#",
   name,
   active,
-  ...props
+  className,
+  extraClassName,
 }) => {
   return (
     <Link
       href={link}
       className={cx(
-        "inline-block py-1.5 md:py-2 px-6 md:px-10 rounded-full border-2 border-solid border-dark dark:border-light hover:scale-105 transition-all ease duration-200 m-2",
-        props.className,
-        active ? "bg-primary text-light" : "bg-black text-light"
+        "bg-neutral-800 inline-block py-1.5 md:py-2 px-6 md:px-10 rounded-full hover:scale-105 transition-all capitalize ease duration-200 m-1",
+        className,
+        extraClassName,
+        active ? "text-light border-neutral-400 border-2" : "text-light"
       )}
     >
-      #{name}
+      {name}
     </Link>
   );
 };

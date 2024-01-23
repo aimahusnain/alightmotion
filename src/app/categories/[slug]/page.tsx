@@ -39,6 +39,7 @@ const CategoryPage = ({ params }: { params: { slug: string } }) => {
   const featuredBlogs = allBlogs.filter((blog) => blog.jfkFeatured === true).slice(0, maxFeaturedBlogs);
   
   const allCategories: string[] = ["all"];
+  
   const blogs = allBlogs.filter((blog: Blog) => {
     return blog.tags && blog.tags.some((tag: string) => {  // Add a check for the existence of blog.tags
       const slugified = slug(tag);
@@ -53,19 +54,11 @@ const CategoryPage = ({ params }: { params: { slug: string } }) => {
   });
 
   return (
-    <article className="mt-12 flex gap-5 flex-col text-white px-5 sm:px-10 md:px-24 sxl:px-32">
-      <div className="flex flex-col">
-        <h1 className="mt-6 font-semibold text-2xl md:text-4xl lg:text-5xl">#{params.slug}</h1>
-        <span className="mt-2 inline-block">Discover more categories and expand your knowledge!</span>
-      </div>
-      
+    <article className="mt-6 flex gap-5 flex-col text-white px-5 sm:px-10 md:px-24 sxl:px-32">
       {/* <HomeCoverSection blogs={allBlogs} featuredBlogs={featuredBlogs} /> */}
-      
       <Search parmy={params} />
-      
       {/* <Categories categories={allCategories} currentSlug={params.slug} /> */}
       <Footer />
-
     </article>
   );
 };
