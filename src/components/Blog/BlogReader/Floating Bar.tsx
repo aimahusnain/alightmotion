@@ -257,7 +257,7 @@ const Butybar = ({ blogy }: { blogy: any }) => {
               onPress={handleWhatsappShare}
               startContent={<FaWhatsapp className={iconClasses} />}
             >
-              Whats Up
+              Whats App
             </DropdownItem>
             
           </DropdownMenu>
