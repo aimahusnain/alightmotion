@@ -7,7 +7,6 @@ import {
 } from "@/src/components/ui/carousel";
 import { slug } from "github-slugger";
 import React from "react";
-import "react-awesome-slider/dist/styles.css";
 import Category from "./Category";
 
 interface CategoriesProps {
