@@ -1,12 +1,11 @@
+// categories/[slug].tsx
 import { allBlogs, Blog } from "@/.contentlayer/generated";
-import BlogLayoutThree from "@/src/components/Blog/BlogLayoutThree";
-import Categories from "@/src/components/Blog/Categories";
+import Search from "@/src/components/Blog/search";
 import Footer from "@/src/components/Footer";
-import GithubSlugger, { slug } from "github-slugger";
-import HomeCoverSection from "@/src/components/Home/HomeCoverSection";
-import Search from '@/src/components/Blog/search'
-const slugger = new GithubSlugger();
+import FeaturedPostsDesign from "@/src/components/Home/FeaturedPostsDesign";
+import GithubSlugger from "github-slugger";
 
+const slugger = new GithubSlugger();
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const categories: string[] = [];
@@ -27,35 +26,29 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return paths;
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<{ title: string; description: string }> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<{ title: string; description: string }> {
   return {
     title: `${params.slug.replaceAll("-", " ")} Articles`,
-    description: `Learn more about ${params.slug === "all" ? "web development" : params.slug} through our collection of expert blogs and tutorials`,
+    description: `Learn more about ${
+      params.slug === "all" ? "web development" : params.slug
+    } through our collection of expert blogs and tutorials`,
   };
 }
 
 const CategoryPage = ({ params }: { params: { slug: string } }) => {
-  const maxFeaturedBlogs = 4;
-  const featuredBlogs = allBlogs.filter((blog) => blog.jfkFeatured === true).slice(0, maxFeaturedBlogs);
-  
-  const allCategories: string[] = ["all"];
-  
-  const blogs = allBlogs.filter((blog: Blog) => {
-    return blog.tags && blog.tags.some((tag: string) => {  // Add a check for the existence of blog.tags
-      const slugified = slug(tag);
-      if (!allCategories.includes(slugified)) {
-        allCategories.push(slugified);
-      }
-      if (params.slug === "all") {
-        return true;
-      }
-      return slugified === params.slug;
-    });
-  });
+  const maxFeaturedBlogs = 5;
+  const featuredBlogs = allBlogs
+    .filter((blog) => blog.jfkFeatured === true)
+    .slice(0, maxFeaturedBlogs);
 
   return (
     <article className="mt-6 flex gap-5 flex-col text-white px-5 sm:px-10 md:px-24 sxl:px-32">
-      {/* <HomeCoverSection blogs={allBlogs} featuredBlogs={featuredBlogs} /> */}
+      <FeaturedPostsDesign blogs={allBlogs} featuredBlogs={featuredBlogs} />
+
       <Search parmy={params} />
       {/* <Categories categories={allCategories} currentSlug={params.slug} /> */}
       <Footer />

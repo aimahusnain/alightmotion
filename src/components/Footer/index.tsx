@@ -5,7 +5,7 @@ import SocialMediaIcons from "./SocialMediaIcons";
 const Footer = () => {
 
   return (
-    <div className="flex flex-col w-full text-center pb-12 mx-14">
+    <div className="flex flex-col w-full text-center pb-12 sm:mx-14 mx-0">
 
               <div className="w-full flex justify-between sm:flex-row flex-col items-center">
                 <div className="h-7 w-64" />

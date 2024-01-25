@@ -3,16 +3,19 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import BlogLayoutThree from "@/src/components/Blog/BlogLayoutThree";
-import { allBlogs, Blog } from "@/.contentlayer/generated";
+import { allBlogs } from "@/.contentlayer/generated";
 import Categories from "@/src/components/Blog/Categories";
 import { slug } from "github-slugger";
 import SocialMediaIcons from "../Footer/SocialMediaIcons";
+import HomeCoverSection from "../Home/HomeCoverSection";
 
 const SearchPage = ({ parmy }: { parmy: any }) => {
   const router: any = useRouter();
   const { q } = router.query || { q: "" };
   const allCategories: string[] = ["all"];
   const [searchTerm, setSearchTerm] = useState(q);
+  const maxFeaturedBlogs = 4;
+  const featuredBlogs = allBlogs.filter((blog) => blog.jfkFeatured === true).slice(0, maxFeaturedBlogs);
   
   const filteredBlogs = allBlogs.filter((blog) => {
     const normalizedTitle = blog.title.toLowerCase();
@@ -39,6 +42,7 @@ const SearchPage = ({ parmy }: { parmy: any }) => {
 
   return (
     <div>
+
       <Categories categories={allCategories} currentSlug={parmy.slug}  extraClassnames={extraClassnames} />
       
       <div className="flex flex-col">
