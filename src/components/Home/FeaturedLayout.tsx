@@ -20,7 +20,7 @@ const FeaturedLayout = ({ nameBlog }: { nameBlog: any }) => {
                 className="w-full rounded-md border object-cover hover:opacity-90 dark:border-neutral-800"
                 style={{
                   position: "absolute",
-                  height: "90%",
+                  height: "95%",
                   width: "100%",
                   left: "0",
                   top: "0",

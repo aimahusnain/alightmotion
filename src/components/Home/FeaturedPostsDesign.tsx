@@ -86,7 +86,7 @@ export default function FeaturedPostsDesign({
           </section>
         </div>
 
-        <div className="col-span-1 flex flex-col gap-3">
+        <div className="col-span-1 flex flex-col gap-5">
           <FeaturedLayout nameBlog={firstBlog} />
           <FeaturedLayout nameBlog={secondBlog} />
           <FeaturedLayout nameBlog={thirdBlog} />
