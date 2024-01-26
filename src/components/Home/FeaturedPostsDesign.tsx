@@ -71,7 +71,7 @@ export default function FeaturedPostsDesign({
             <div className="col-span-1 flex flex-col gap-2">
               <h1 className="text-xl font-bold leading-snug text-slate-800 dark:text-neutral-50 lg:text-3xl">
                 <a
-                  className="hover:text-primary leading-tight tracking-tight hover:underline"
+                  className="hover:text-primary hover:underline leading-tight tracking-tight"
                   href={firstBlog.url}
                 >
                   {firstBlog.title}

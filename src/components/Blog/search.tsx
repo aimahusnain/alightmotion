@@ -33,12 +33,10 @@ const SearchPage = ({ parmy }: { parmy: any }) => {
           allCategories.push(slugified);
         }
         if (parmy.slug === "all" && !blog.jfkFeatured) {
-          
           return true;
         }
         return slugified === parmy.slug;
       }) 
-       // Exclude blogs with jfkFeatured set to true
     );
   });
 

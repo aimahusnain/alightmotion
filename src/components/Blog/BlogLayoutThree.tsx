@@ -24,7 +24,7 @@ const BlogLayoutThree = ({ blog }: {blog: any}) => {
           {blog.tags[0]}
         </span>
         <Link href={blog.url} className="inline-block my-1">
-          <h2 className="capitalize text-[24px] font-bold leading-relaxed mb-[0.5rem]">
+          <h2 className="hover:text-primary hover:underline capitalize text-[24px] font-bold leading-relaxed mb-[0.5rem]">
               {blog.title}
           </h2>
         </Link>
