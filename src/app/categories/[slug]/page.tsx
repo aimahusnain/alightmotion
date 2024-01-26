@@ -40,17 +40,9 @@ export async function generateMetadata({
 }
 
 const CategoryPage = ({ params }: { params: { slug: string } }) => {
-  const maxFeaturedBlogs = 5;
-  const featuredBlogs = allBlogs
-    .filter((blog) => blog.jfkFeatured === true)
-    .slice(0, maxFeaturedBlogs);
-
   return (
     <article className="mt-6 flex gap-5 flex-col text-white px-5 sm:px-10 md:px-24 sxl:px-32">
-      <FeaturedPostsDesign blogs={allBlogs} featuredBlogs={featuredBlogs} />
-
       <Search parmy={params} />
-      {/* <Categories categories={allCategories} currentSlug={params.slug} /> */}
       <Footer />
     </article>
   );

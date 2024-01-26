@@ -90,12 +90,6 @@ export default function BlogPage({ params }) {
       />
       <article>
         <BlogReader parmy={params} blogy={blog} />
-        {/* <BlogDetails blog={blog} slug={params.slug} />
-
-        <BlogContent parmy={params} />
-        <div className="px-9">
-        <Footer />
-        </div> */}
       </article>
     </>
   );
