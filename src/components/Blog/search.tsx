@@ -24,24 +24,21 @@ const SearchPage = ({ parmy }: { parmy: any }) => {
   const filteredBlogs = allBlogs.filter((blog) => {
     const normalizedTitle = blog.title.toLowerCase();
     const normalizedQuery = searchTerm.toLowerCase();
-    
-    // Updated condition for category filtering
-    const isCategoryMatch = blog.tags &&
+    return (
+      normalizedTitle.includes(normalizedQuery) &&
+      blog.tags &&
       blog.tags.some((tag: string) => {
         const slugified = slug(tag);
         if (!allCategories.includes(slugified)) {
           allCategories.push(slugified);
         }
-        if (parmy.slug === "all") {
+        if (parmy.slug === "all" && !blog.jfkFeatured) {
+          
           return true;
         }
         return slugified === parmy.slug;
-      });
-  
-    return (
-      normalizedTitle.includes(normalizedQuery) &&
-      isCategoryMatch &&
-      !blog.jfkFeatured // Exclude blogs with jfkFeatured set to true
+      }) 
+       // Exclude blogs with jfkFeatured set to true
     );
   });
 
@@ -90,7 +87,7 @@ const SearchPage = ({ parmy }: { parmy: any }) => {
         {parmy.slug === "all" && !isTyping && (
           <h2 className="text-5xl font-bold">Blogs</h2>
         )}
-       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-16">
   {filteredBlogs.map((blog, index: number) => (
     <article key={index} className="col-span-1 row-span-1 relative">
       <BlogLayoutThree blog={blog} />
