@@ -1,9 +1,8 @@
 "use client";
 
-import { Button, Card, CardFooter, CardHeader, Image } from "@nextui-org/react";
-import React from "react";
-import { sortBlogs } from "../../utils";
+import Image from "next/image";
 import Link from "next/link";
+import { sortBlogs } from "../../utils";
 import FeaturedLayout from "./FeaturedLayout";
 
 export default function FeaturedPostsDesign({
@@ -41,11 +40,15 @@ export default function FeaturedPostsDesign({
                   href={firstBlog.url}
                 >
                   <div className="relative pt-[52.5%]">
-                    <img
+                    <Image
+                   width={firstBlog.image.width}
+                   height={firstBlog.image.height}
+                   priority
                       alt={`Image of ${firstBlog.title}`}
-                      decoding="async"
-                      data-nimg="fill"
+                      blurDataURL={firstBlog.image.blurhashDataUrl}
                       className="w-full rounded-md border object-cover hover:opacity-90 dark:border-neutral-800"
+                      placeholder="blur"
+                      sizes="100vw"
                       style={{
                         position: "absolute",
                         height: "100%",
@@ -83,7 +86,7 @@ export default function FeaturedPostsDesign({
           </section>
         </div>
 
-        <div className="col-span-1 flex flex-col gap-6">
+        <div className="col-span-1 flex flex-col gap-3">
           <FeaturedLayout nameBlog={firstBlog} />
           <FeaturedLayout nameBlog={secondBlog} />
           <FeaturedLayout nameBlog={thirdBlog} />
