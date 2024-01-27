@@ -24,7 +24,7 @@ export default function FeaturedPostsDesign({
   const firstBlog = blogsToDisplay[1];
   const secondBlog = blogsToDisplay[0];
   const thirdBlog = blogsToDisplay[2];
-  // const fourthBlog = blogsToDisplay[3];
+  const fourthBlog = blogsToDisplay[3];
   // const fifthBlog   =   blogsToDisplay[4];
 
   return (
@@ -70,12 +70,12 @@ export default function FeaturedPostsDesign({
             </div>
             <div className="col-span-1 flex flex-col gap-2">
               <h1 className="text-xl font-bold leading-snug text-slate-800 dark:text-neutral-50 lg:text-3xl">
-                <a
+                <Link
                   className="hover:text-primary hover:underline leading-tight tracking-tight"
                   href={firstBlog.url}
                 >
                   {firstBlog.title}
-                </a>
+                </Link>
               </h1>
               <Link href={firstBlog.url}>
                 <p className="text-md leading-snug text-slate-500 dark:text-neutral-400">
@@ -87,9 +87,9 @@ export default function FeaturedPostsDesign({
         </div>
 
         <div className="col-span-1 flex flex-col gap-5">
-          <FeaturedLayout nameBlog={firstBlog} />
           <FeaturedLayout nameBlog={secondBlog} />
           <FeaturedLayout nameBlog={thirdBlog} />
+          <FeaturedLayout nameBlog={fourthBlog} />
         </div>
       </div>
 

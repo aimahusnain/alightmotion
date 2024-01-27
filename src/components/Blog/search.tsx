@@ -32,7 +32,7 @@ const SearchPage = ({ parmy }: { parmy: any }) => {
         if (!allCategories.includes(slugified)) {
           allCategories.push(slugified);
         }
-        if (parmy.slug === "all" && !blog.jfkFeatured) {
+        if (parmy.slug === "all" && (!isTyping ? !blog.jfkFeatured : blog.jfkFeatured)) {
           return true;
         }
         return slugified === parmy.slug;
