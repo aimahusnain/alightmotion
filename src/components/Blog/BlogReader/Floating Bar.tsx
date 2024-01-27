@@ -1,5 +1,12 @@
 "use client";
 
+import siteMetadata from "@/src/utils/siteMetaData";
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
+} from "@nextui-org/dropdown";
 import {
   Button,
   Modal,
@@ -10,28 +17,13 @@ import {
   useDisclosure,
 } from "@nextui-org/react";
 import { ChevronRight } from "lucide-react";
-import { useEffect, useState } from "react";
-import { RiMenu2Line } from "react-icons/ri";
-import { FaRedditAlien } from "react-icons/fa";
-import { RiTwitterXFill } from "react-icons/ri";
-import { FaFacebook } from "react-icons/fa";
-import {
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownTrigger,
-} from "@nextui-org/dropdown";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { FaFacebook, FaHackerNews, FaRedditAlien, FaShareAlt, FaWhatsapp } from "react-icons/fa";
+import { FaBarsStaggered, FaLinkedinIn } from "react-icons/fa6";
 import { LuLink } from "react-icons/lu";
-import siteMetadata from "@/src/utils/siteMetaData";
+import { RiTwitterXFill } from "react-icons/ri";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FaShareAlt } from "react-icons/fa";
-import { FaBarsStaggered } from "react-icons/fa6";
-import { FaWhatsapp } from "react-icons/fa";
-import { FaHackerNews } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa6";
-import { Divider } from "@nextui-org/react";
 
 const Butybar = ({ blogy }: { blogy: any }) => {
   const [isVisible, setIsVisible] = useState(false);

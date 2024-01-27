@@ -1,10 +1,12 @@
 import { allBlogs } from "contentlayer/generated";
-import Footer from "../../Footer";
-import BlogDetails from "../BlogDetails";
-import RenderMdx from "../RenderMdx";
-import Butybar from "./Floating Bar";
-import TableofContents from "./TableofContents";
-import BlogReaderImage from "./image";
+const Footer = lazy(() => import("../../Footer"));
+const BlogDetails = lazy(() => import("../BlogDetails"));
+const RenderMdx = lazy(() => import("../RenderMdx"));
+const Butybar = lazy(() => import("./Floating Bar"));
+const TableofContents = lazy(() => import("./TableofContents"));
+const BlogReaderImage = lazy(() => import("./image"));
+import { lazy } from "react";
+
 
 const BlogReading = ({ parmy, blogy }: { parmy: any; blogy: any }) => {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === parmy.slug);

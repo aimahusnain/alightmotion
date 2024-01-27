@@ -3,7 +3,7 @@
 import { Tooltip } from "@nextui-org/tooltip";
 import { Spinner } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import React, { lazy, useEffect, useState } from "react";
 import { FaInstagram } from "react-icons/fa";
 import { MdOutlineFacebook } from "react-icons/md";
 import { RiTwitterXFill } from "react-icons/ri";

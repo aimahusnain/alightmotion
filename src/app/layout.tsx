@@ -1,13 +1,14 @@
-import React, { Suspense } from "react";
 import "../styles/fonts.css";
 import "./globals.css";
+import React, { Suspense, lazy } from "react";
 import { cx } from "@/src/utils";
-import Header from "@/src/components/Header";
-import siteMetadata from "../utils/siteMetaData";
 import { Providers } from "./providers";
-import NextThemeProvider from "@/src/providers/theme-provider";
-import Loading from "../providers/loading";
 import { ToastContainer } from 'react-toastify';
+
+import siteMetadata from "../utils/siteMetaData";
+const Header = lazy(() => import("@/src/components/Header"));
+const NextThemeProvider = lazy(() => import("@/src/providers/theme-provider"));
+const Loading = lazy(() => import("../providers/loading"));
 
 export const metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),

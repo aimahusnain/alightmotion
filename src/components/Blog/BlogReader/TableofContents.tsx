@@ -3,34 +3,19 @@
 import { allBlogs } from "contentlayer/generated";
 import { ChevronRight } from "lucide-react";
 import { useState } from "react";
-// import { handleSmoothScroll } from "@/src/utils/scroller"; // Import the utility function
 
 const TableofContents = ({ parmy }: { parmy: any }) => {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === parmy.slug);
   if (!blog) {
-    // Handle case where the blog is not found
     return <div>Blog not found</div>;
   }
-
-    // const handleSmoothScroll = (e: any, element: string) => {
-    //   e.preventDefault();
-    //   const targetElement = document.getElementById(element);
-    //   if (targetElement) {
-    //     targetElement.scrollIntoView({
-    //       behavior: "smooth",
-    //       block: "start",
-    //     });
-    //   }
-    // };
     
     const [scrollMargin, setScrollMargin] = useState(0);
 
     const handleButtonClick = (e: any, myelement: string) => {
-      // You can adjust the scroll margin as needed
       const newScrollMargin = 60;
       setScrollMargin(newScrollMargin);
   
-      // Scroll to the element with the specified ID
       const element = document.getElementById(myelement);
       if (element) {
         window.scrollTo({
@@ -54,7 +39,6 @@ const TableofContents = ({ parmy }: { parmy: any }) => {
           return (
             <li key={`#${heading.slug}`} className="py-1">
               <button
-                // href={`#${heading.slug}`}
                 onClick={(e) => handleButtonClick(e, `${heading.slug}`)}
                 data-level={heading.level}
                 className="data-[level=two]:pl-0 data-[level=two]:pt-2 data-[level=two]:border-t border-solid border-zinc-500/10 data-[level=three]:pl-4 sm:data-[level=three]:pl-6 w-full hover:bg-alightdarkbg hover:border hover:border-primary transition-all duration-400 rounded-lg p-3 flex items-center justify-start !text-left"

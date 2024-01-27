@@ -1,4 +1,6 @@
-import Link from "next/link";
+import { lazy } from "react";
+
+const Link = lazy(() => import("next/link"));
 
 export default function NotFound() {
   return (

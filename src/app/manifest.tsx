@@ -1,7 +1,7 @@
 export default function manifest() {
     return {
-      name: 'Next.js App',
-      short_name: 'Next.js App',
+      name: 'Alight Motion',
+      short_name: 'Alight Motion',
       description: 'Next.js App',
       start_url: '/',
       display: 'standalone',
