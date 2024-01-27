@@ -6,7 +6,7 @@ import Link from "next/link";
 const mdxComponents = {
   Image,
   a: (props: any) => (
-    <Link href={props.href} className="text-primary font-extrabold no-underline hover:text-primary/70 transition-all duration-300">
+    <Link aria-label={props.herf} href={props.href} className="text-primary font-extrabold no-underline hover:text-primary/70 transition-all duration-300">
         {props.children}
     </Link>
   ),

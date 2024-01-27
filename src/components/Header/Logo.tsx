@@ -3,7 +3,7 @@ import React from "react";
 
 const Logo = () => {
   return (
-    <Link href="/">
+    <Link aria-label="logo" href="/">
       <svg
         id="Layer_1"
         version="1.1"

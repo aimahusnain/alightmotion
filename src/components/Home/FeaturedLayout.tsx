@@ -46,7 +46,7 @@ const FeaturedLayout = ({ nameBlog }: { nameBlog: any }) => {
             {nameBlog.title}
           </Link>
         </h1>
-        <Link href={nameBlog.url}>
+        <Link aria-label={nameBlog.description.slice(0, 60)} href={nameBlog.url}>
           <p className="text-sm leading-snug text-slate-500 dark:text-neutral-400">
             {nameBlog.description.slice(0, 103)}...
           </p>

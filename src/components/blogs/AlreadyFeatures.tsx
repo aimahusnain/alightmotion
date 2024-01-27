@@ -4,7 +4,6 @@ import MyFeature from "@/src/components/blogs/myFeature";
 const AlreadyFeatures = () => {
   return (
     <div>
-    {/* id="specifications" */}
       <h1 id="features" style={{ scrollMarginTop: "40px" }} className="text-5xl sm:text-6xl font-bold my-4 mt-16 text-center">
         Alight Motion Features
       </h1>

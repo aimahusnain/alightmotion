@@ -69,7 +69,7 @@ export default function RootLayout({
     </head>
       <body
         className={cx(
-          "font-EuclidCircularB",  // Use the declared font-family
+          "font-EuclidCircularB",
           "font-mr !bg-black dark:bg-black text-white"
         )}
       >
@@ -81,7 +81,6 @@ export default function RootLayout({
             <ToastContainer />
             </Loading>
           </Providers>
-          {/* <Footer /> */}
         </NextThemeProvider>
       </body>
     </html>

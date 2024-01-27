@@ -32,8 +32,6 @@ const BlogReading = ({ parmy, blogy }: { parmy: any; blogy: any }) => {
           <RenderMdx blog={blogy} />
         </div>
 
-        {/* <BlogReaderImage parmy={parmy} />
-        <BlogContent parmy={parmy} blogy={blogy} /> */}
       </div>
         <Footer />
     </div>

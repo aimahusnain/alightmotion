@@ -77,7 +77,7 @@ export default function FeaturedPostsDesign({
                   {firstBlog.title}
                 </Link>
               </h1>
-              <Link href={firstBlog.url}>
+              <Link aria-label={firstBlog.description.slice(0, 60)} href={firstBlog.url}>
                 <p className="text-md leading-snug text-slate-500 dark:text-neutral-400">
                   {firstBlog.description.slice(0, 250)}...
                 </p>

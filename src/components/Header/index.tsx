@@ -71,7 +71,7 @@ export default function Header() {
             </Link>
           </NavbarItem>
         ))}
-        <Link href="/">
+        <Link aria-label="get the app" href="/">
           <Button className="bg-primary font-bold hover:bg-primary/90 text-black">
             Get The App
           </Button>
@@ -97,7 +97,7 @@ export default function Header() {
             </Link>
           </NavbarMenuItem>
         ))}
-        <Link href="/">
+        <Link aria-label="get the app" href="/">
           <Button className="bg-primary font-bold hover:bg-primary/90 text-black">
             Get The App
           </Button>
