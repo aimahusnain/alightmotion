@@ -3,7 +3,6 @@ import "./globals.css";
 import { cx } from "@/src/utils";
 // import { Inter, Manrope } from "next/font/google";
 import Header from "@/src/components/Header";
-import Footer from "../components/Footer";
 import siteMetadata from "../utils/siteMetaData";
 import { Providers } from "./providers";
 import NextThemeProvider from "@/src/providers/theme-provider";
