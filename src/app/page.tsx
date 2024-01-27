@@ -53,7 +53,6 @@ export default function Home() {
     // </main>
 
     <div className="bg-black">
-      <Suspense fallback={<div>Loading...</div>}>
         {loading && (
           <Spinner
             label="Loading..."
@@ -282,7 +281,6 @@ export default function Home() {
             alt=""
           ></img>
         </div>
-      </Suspense>
     </div>
   );
 }

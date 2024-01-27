@@ -1,25 +1,13 @@
+import React, { Suspense } from "react";
 import "../styles/fonts.css";
 import "./globals.css";
 import { cx } from "@/src/utils";
-// import { Inter, Manrope } from "next/font/google";
 import Header from "@/src/components/Header";
 import siteMetadata from "../utils/siteMetaData";
 import { Providers } from "./providers";
 import NextThemeProvider from "@/src/providers/theme-provider";
 import Loading from "../providers/loading";
 import { ToastContainer } from 'react-toastify';
-
-// const inter = Inter({
-//   subsets: ["latin"],
-//   display: "swap",
-//   variable: "--font-in",
-// });
-
-// const manrope = Manrope({
-//   subsets: ["latin"],
-//   display: "swap",
-//   variable: "--font-mr",
-// });
 
 export const metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
@@ -55,7 +43,6 @@ export const metadata = {
     images: [siteMetadata.socialBanner],
   },
 };
-
 export default function RootLayout({
   children,
 }: {
@@ -63,9 +50,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-    <head>
-      
-    </head>
       <body
         className={cx(
           "font-EuclidCircularB",
@@ -75,10 +59,12 @@ export default function RootLayout({
         <NextThemeProvider>
           <Header />
           <Providers>
-            <Loading>
-            {children}
-            <ToastContainer />
-            </Loading>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Loading>
+                {children}
+                <ToastContainer />
+              </Loading>
+            </Suspense>
           </Providers>
         </NextThemeProvider>
       </body>
